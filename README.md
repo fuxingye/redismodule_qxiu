@@ -10,55 +10,55 @@ hnset：当你把hset的value当一个数字incr时，你是否又发现缺了�
 looparr：乃是定长的容器，适合存储最近的历史数据。
 
 以下是全部命令：
-zmap:  (与redis原生zset系列命令基本一致)
-xlq.zmadd key score member value
-xlq.zmaddReOri
-xlq.zmincrby
-xlq.zmincrbyReOri
-xlq.zmrangebyscore
-xlq.zmrevrangebyscore
-xlq.zmscore
-xlq.zminfo
-xlq.zmcard
-xlq.zmrem
-xlq.zmremReOri
-xlq.zmremByScore
-xlq.zmremByScoreReOri
-xlq.zmremRangeByScore
-xlq.zmremRangeByScoreReOri
-xlq.zmremRangeByIndex
-xlq.zmremRangeByIndexReOri
-举例：
-一、
-127.0.0.1:6379> xlq.zmadd key1 1 member1 value1
-(integer) 1
-127.0.0.1:6379> xlq.zmadd key1 2 member2 value2
-(integer) 1
-127.0.0.1:6379> xlq.zmrevrangebyscore key1 -100 100 withscores withvalues limit 0 100
-1) "member2"
-2) (integer) 2
-3) "value2"
-4) "member1"
-5) (integer) 1
-6) "value1"
+	zmap:  (与redis原生zset系列命令基本一致)
+		xlq.zmadd key score member value
+		xlq.zmaddReOri
+		xlq.zmincrby
+		xlq.zmincrbyReOri
+		xlq.zmrangebyscore
+		xlq.zmrevrangebyscore
+		xlq.zmscore
+		xlq.zminfo
+		xlq.zmcard
+		xlq.zmrem
+		xlq.zmremReOri
+		xlq.zmremByScore
+		xlq.zmremByScoreReOri
+		xlq.zmremRangeByScore
+		xlq.zmremRangeByScoreReOri
+		xlq.zmremRangeByIndex
+		xlq.zmremRangeByIndexReOri
+	举例：
+	一、
+	127.0.0.1:6379> xlq.zmadd key1 1 member1 value1
+	(integer) 1
+	127.0.0.1:6379> xlq.zmadd key1 2 member2 value2
+	(integer) 1
+	127.0.0.1:6379> xlq.zmrevrangebyscore key1 -100 100 withscores withvalues limit 0 100
+	1) "member2"
+	2) (integer) 2
+	3) "value2"
+	4) "member1"
+	5) (integer) 1
+	6) "value1"
 
 
-hmap: (与redis原生hset系列命令基本一致)
-xlq.hnset
-xlq.hnsetReOri
-xlq.hnincrby
-xlq.hnincrbyReOri
-xlq.hnget
-xlq.hngetall
-xlq.hndel
-xlq.hndelReOri
-xlq.hnlen
-xlq.hnkeys
-xlq.hnexists
+	hmap: (与redis原生hset系列命令基本一致)
+		xlq.hnset
+		xlq.hnsetReOri
+		xlq.hnincrby
+		xlq.hnincrbyReOri
+		xlq.hnget
+		xlq.hngetall
+		xlq.hndel
+		xlq.hndelReOri
+		xlq.hnlen
+		xlq.hnkeys
+		xlq.hnexists
 
-loopstr：
-xlq.loopstrCreate
-xlq.loopstrCreateOrResize
-xlq.loopstrInsert
-xlq.loopstrRevrange
-xlq.loopstrInfo
+	loopstr：
+		xlq.loopstrCreate
+		xlq.loopstrCreateOrResize
+		xlq.loopstrInsert
+		xlq.loopstrRevrange
+		xlq.loopstrInfo
