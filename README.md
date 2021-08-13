@@ -70,3 +70,5 @@ looparr：乃是定长的容器，适合存储最近的历史数据。
 		xlq.loopstrInsert
 		xlq.loopstrRevrange
 		xlq.loopstrInfo
+
+配套JAVA客户端  https://github.com/fuxingye/qxiu_common_tools  基于jedis3.X
