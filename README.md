@@ -10,6 +10,7 @@ hnset：当你把hset的value当一个数字incr时，你是否又发现缺了�
 looparr：乃是定长的容器，适合存储最近的历史数据。
 
 以下是全部命令：
+
 	zmap:  (与redis原生zset系列命令基本一致)
 		xlq.zmadd key score member value
 		xlq.zmaddReOri
