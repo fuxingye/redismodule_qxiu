@@ -6,9 +6,11 @@
 
 zmap：是在zset基础上多存个value。 这是从0新写的skiplist加hashmap组合，性能略差于zset,因为多存了value
 
-   经典场景：一篇文章的评论，评论按点赞排序。key是文章ID，field是评论ID，点赞数是score。好，zset没地方存评论内容了。
+   	经典场景：一篇文章的评论，评论按点赞排序。key是文章ID，field是评论ID，点赞数是score。
+	
+	好，zset没地方存评论内容了。
    
-   你需要单独找地方去存。而我的zmap解决了它。  
+   	你需要单独找地方去存。而我的zmap解决了它。  
 
 hnset：当你把hset的value当一个数字incr时，你是否又发现缺了个value?hnset就是解决这个场景的。  
 
