@@ -8,8 +8,8 @@ void zmaddCmd(void* _zmap, long long score, char* _member, size_t _memberLen, ch
 	xlq_zmap_add(_zmap, score, _memberLen, _member, _valueLen, _value, scoreOri, _outValue_size, _outValue_value);
 }
 
-long long zmincrbyCmd(void* _zmap, long long score, char* _member, size_t _memberLen, char* _value, size_t _valueLen, unsigned int* _outValue_size, char** _outValue_value) {
-	return xlq_zmap_incrby(_zmap, score, _memberLen, _member, _valueLen, _value, _outValue_size, _outValue_value);
+long long zmincrbyCmd(void* _zmap, long long score, char* _member, size_t _memberLen, char* _value, size_t _valueLen, unsigned int* _outValue_size, char** _outValue_value, int* _valueChg) {
+	return xlq_zmap_incrby(_zmap, score, _memberLen, _member, _valueLen, _value, _outValue_size, _outValue_value, _valueChg);
 }
 
 void zmrangeByScore(struct xlq_zmap_t* _zmap, long long minScore, long long maxScore, struct xlq_list_str* _list,

@@ -35,7 +35,7 @@ size_t xlq_zmap_sizeof(struct xlq_zmap_t* _zmap) {
 }
 
 long long  xlq_zmap_incrby(struct xlq_zmap_t* _zmap, long long score, unsigned int _member_size, char* _member_value, unsigned int _value_size, char* _value_value
-		, unsigned int* _outValue_size, char** _outValue_value) {
+		, unsigned int* _outValue_size, char** _outValue_value, int* _valueChg) {
 	struct xlq_str* v;
 	int findRs = xlq_hashmap_get2(_zmap->m_hashmap, _member_size, _member_value, &v);
 
@@ -52,6 +52,7 @@ long long  xlq_zmap_incrby(struct xlq_zmap_t* _zmap, long long score, unsigned i
 				char* v1 = xlq_malloc(_value_size);
 				memcpy(v1, _value_value, _value_size);
 				v->m_value2 = v1;
+				*_valueChg = 1;
 			}
 			return v->m_value_8zj;
 		}
@@ -71,6 +72,7 @@ long long  xlq_zmap_incrby(struct xlq_zmap_t* _zmap, long long score, unsigned i
 			char* v1 = xlq_malloc(_value_size);
 			memcpy(v1, _value_value, _value_size);
 			v_skip->m_value2 = v1;
+			*_valueChg = 1;
 		}
 		
 		return v_skip->m_value_8zj;

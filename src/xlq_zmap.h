@@ -18,7 +18,7 @@ int xlq_zmap_destory(struct xlq_zmap_t* _zmap);
 size_t xlq_zmap_sizeof(struct xlq_zmap_t* _zmap);
 
 long long  xlq_zmap_incrby(struct xlq_zmap_t* _zmap, long long score, unsigned int _member_size, char* _member_value, unsigned int _value_size, char* _value_value
-	, unsigned int* _outValue_size, char** _outValue_value);
+	, unsigned int* _outValue_size, char** _outValue_value, int* _valueChg);
 
 long long xlq_zmap_add(struct xlq_zmap_t* _zmap, long long score, unsigned int _member_size, char* _member_value, unsigned int _value_size, char* _value_value
 	, long long* scoreOri, unsigned int* _outValue_size, char** _outValue_value);

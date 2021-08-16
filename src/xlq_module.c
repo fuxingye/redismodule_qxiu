@@ -244,12 +244,12 @@ int ZMap_zmincrByCmd(RedisModuleCtx* ctx, RedisModuleString** argv, int argc) {
 
     unsigned int srcValue_size = 0;
     char* srcValue_value = NULL;
-
-    long long scoreNow = zmincrbyCmd(hto, score, member, memberLen, value, valueLen, &srcValue_size, &srcValue_value);
+    int* valueChg = 0;
+    long long scoreNow = zmincrbyCmd(hto, score, member, memberLen, value, valueLen, &srcValue_size, &srcValue_value, &valueChg);
 
     RedisModule_ReplyWithLongLong(ctx, scoreNow);
 
-    if (valueLen > 0 && srcValue_size > 0)  //说明有替换发生
+    if (valueChg && srcValue_size > 0)  //说明有替换发生
     {
         xlq_free(srcValue_value);
     }
@@ -291,13 +291,14 @@ int ZMap_zmincrByReturnOriCmd(RedisModuleCtx* ctx, RedisModuleString** argv, int
     unsigned int srcValue_size;
     char* srcValue_value;
 
-    long long scoreNow = zmincrbyCmd(hto, score, member, memberLen, value, valueLen, &srcValue_size, &srcValue_value);
+    int* valueChg = 0;
+    long long scoreNow = zmincrbyCmd(hto, score, member, memberLen, value, valueLen, &srcValue_size, &srcValue_value, &valueChg);
 
     RedisModule_ReplyWithArray(ctx, (long) 2);
     RedisModule_ReplyWithLongLong(ctx, scoreNow);
     RedisModule_ReplyWithStringBuffer(ctx, srcValue_value, srcValue_size);
 
-    if (valueLen > 0 && srcValue_size > 0)
+    if (valueChg && srcValue_size > 0)
     {
         xlq_free(srcValue_value);
     }
