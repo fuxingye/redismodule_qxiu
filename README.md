@@ -1,4 +1,4 @@
-# redismodule_qxiu ![](https://img.shields.io/badge/version-1.0.0-green)
+# redismodule_qxiu ![](https://img.shields.io/badge/version-1.0.0-green)![](https://img.shields.io/badge/author-%E4%BB%98%E5%85%B4%E7%83%A8%20%E6%96%B9%E8%B6%85-green)
 (中国 浙江齐聚科技北京分公司 齐齐直播 处电交友 作者：付兴烨 方超)
 
 你是否一直觉得，redis的zset 和 hset缺个东西？使的不少场景下程序变得复杂？ 
